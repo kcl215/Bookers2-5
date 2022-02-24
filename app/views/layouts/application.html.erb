@@ -11,7 +11,12 @@
   <body>
     <%= render 'layouts/header' %>
       <main>
+        <% if user_signed_in? %>
+        <%= render 'searches/search' %>
+        <!-- 検索窓必須だが、あとでログインしている人にしか見えなくする -->
+        <% end %>
         <p id="notice"><%= notice %></p>
+
         <%= yield %>
       </main>
     <%= render 'layouts/footer' %>
